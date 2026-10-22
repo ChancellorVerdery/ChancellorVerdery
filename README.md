@@ -59,6 +59,10 @@ Retired projects, kept public as a record of how I got here.
 | [VectorLab](https://github.com/ChancellorVerdery/vectorlab) | A native 3D vector visualizer I built to check my statics homework. Its last iteration, renamed Trihedron, added curves and surfaces. Its ideas carried on in Thuban Graph. |
 | [Bridge](https://github.com/ChancellorVerdery/bridge) | An Apple app with a web UI and a relay for coordinating Claude agent sessions across projects. |
 
+### Forks
+
+- [vorssaint-utils](https://github.com/ChancellorVerdery/vorssaint-utils): my fork of the Vorssaint menu bar toolkit. It adds Spotify queue, search, likes and playlists to the notch music panel (including playback on other devices), plus a notch island for external displays that you can pin with a right-click.
+
 ### Claude Code activity
 
 <img src="assets/claude-usage.svg" alt="Daily Claude Code usage over the last year" width="100%">
