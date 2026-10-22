@@ -56,7 +56,7 @@ Retired projects, kept public as a record of how I got here.
 | Project | What it was |
 |---|---|
 | [Atlas](https://github.com/ChancellorVerdery/atlas) | A self-hosted life-management web app with a backend, a server console and an Apple wrapper. Its plugins grew into the Thuban apps. |
-| [VectorLab](https://github.com/ChancellorVerdery/vectorlab) | A native 3D vector visualizer I built to check my statics homework. Its ideas carried on in Thuban Graph. |
+| [VectorLab](https://github.com/ChancellorVerdery/vectorlab) | A native 3D vector visualizer I built to check my statics homework. Its last iteration, renamed Trihedron, added curves and surfaces. Its ideas carried on in Thuban Graph. |
 | [Bridge](https://github.com/ChancellorVerdery/bridge) | An Apple app with a web UI and a relay for coordinating Claude agent sessions across projects. |
 
 ### Claude Code activity
