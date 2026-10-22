@@ -6,7 +6,9 @@ Only per-day totals are kept or published — never prompts, paths or project na
 Sources, summed per day:
   * session logs on this machine (~/.claude/projects/**/*.jsonl), stored under --source (default "this-mac");
   * other machines' logs, imported once with `--import NAME < logs` (raw .jsonl lines on stdin) or
-    `--import-totals NAME file.json` (the output of `--export` run on that machine);
+    `--import-totals NAME file.json` (the output of `--export` run on that machine), `--import-stats NAME
+    stats-cache.json` (Claude Code's own /stats cache, which outlives the transcripts) or `--import-ledger NAME file.csv`
+    (per-day token ledger: date,model,project,records,sessions,input_tokens,output_tokens,cache_read…,cache_creation…);
   * Claude-co-authored git commits in the repos under ~/Desktop/Claude, which mark days whose session logs are gone
     (Claude Code deletes transcripts after 30 days). Those days are drawn in a lighter shade and labelled as such.
 
@@ -83,6 +85,30 @@ def claude_commits():
     return dict(sorted(days.items()))
 
 
+def from_stats(path):
+    """Claude Code's stats-cache.json: daily message counts (dailyActivity) and daily tokens per model."""
+    d = json.load(open(path))
+    days = defaultdict(lambda: {"tokens": 0, "output": 0, "messages": 0, "sessions": 0})
+    for a in d.get("dailyActivity", []):
+        days[a["date"]]["messages"] = a.get("messageCount", 0)
+        days[a["date"]]["sessions"] = a.get("sessionCount", 0)
+    for t in d.get("dailyModelTokens", []):
+        days[t["date"]]["tokens"] = sum((t.get("tokensByModel") or {}).values())
+    return dict(days)
+
+
+def from_ledger(path):
+    import csv
+    days = defaultdict(lambda: {"tokens": 0, "output": 0, "messages": 0, "sessions": 0})
+    for row in csv.DictReader(open(path)):
+        rec, n = days[row["date"]], lambda k: int(row.get(k) or 0)
+        rec["tokens"] += n("input_tokens") + n("output_tokens") + n("cache_read_input_tokens") + n("cache_creation_input_tokens")
+        rec["output"] += n("output_tokens")
+        rec["messages"] += n("records")
+        rec["sessions"] += n("sessions")
+    return dict(days)
+
+
 def load():
     try:
         data = json.load(open(DATA))
@@ -96,10 +122,12 @@ def load():
 
 
 def merge(into, fresh):
-    """Same machine, re-read: keep the larger total per day, so days survive log cleanup."""
+    """Same machine, another read or another record of it: keep the larger value of each field per day, so days
+    survive log cleanup and overlapping records (logs, stats cache, ledger) never double count."""
     for k, v in fresh.items():
-        if k not in into or v.get("tokens", 0) > into[k].get("tokens", 0):
-            into[k] = v
+        old = into.setdefault(k, {})
+        for f in ("tokens", "output", "messages", "sessions"):
+            old[f] = max(old.get(f, 0), v.get(f, 0))
 
 
 def totals(data):
@@ -136,13 +164,13 @@ def render(data):
     today = dt.date.today()
     start = today - dt.timedelta(days=(today.weekday() + 1) % 7) - dt.timedelta(weeks=WEEKS - 1)
     days, commits = totals(data), data["commits"]
-    vals = sorted(v["output"] for v in days.values() if v["output"])
+    vals = sorted(v["messages"] for v in days.values() if v["messages"])
     quart = [vals[int(len(vals) * f)] for f in (0.25, 0.5, 0.75)] if vals else []
 
     def level(k):
         v = days.get(k)
         if v and v["messages"]:
-            return f"l{1 + sum(v['output'] > t for t in quart)}"
+            return f"l{1 + sum(v['messages'] > t for t in quart)}"
         return "lc" if commits.get(k) else "l0"
 
     cell, gap, left, top = 11, 3, 30, 34
@@ -196,7 +224,7 @@ def render(data):
            f'<text class="h" x="0" y="14">Claude Code activity</text>'
            f'<text class="s" x="{width - 10}" y="14" text-anchor="end">{summary}</text>'
            + "".join(out) + "".join(legend) +
-           f'<text class="t" x="0" y="{height - 12}">Updated {today:%b %-d, %Y} · shade = output tokens per day · '
+           f'<text class="t" x="0" y="{height - 12}">Updated {today:%b %-d, %Y} · shade = messages per day · '
            f'outlined = days known only from Claude-co-authored commits</text></svg>')
     data["updated"], data["summary"] = today.isoformat(), summary
     return svg
@@ -207,6 +235,8 @@ def main():
     ap.add_argument("--source", default="this-mac", help="name for this machine's logs (default: this-mac)")
     ap.add_argument("--import", dest="imp", metavar="NAME", help="aggregate raw .jsonl session logs from stdin as source NAME")
     ap.add_argument("--import-totals", nargs=2, metavar=("NAME", "FILE"), help="merge an --export file as source NAME")
+    ap.add_argument("--import-stats", nargs=2, metavar=("NAME", "FILE"), help="merge Claude Code's stats-cache.json as source NAME")
+    ap.add_argument("--import-ledger", nargs=2, metavar=("NAME", "FILE"), help="merge a per-day token ledger CSV as source NAME")
     ap.add_argument("--export", action="store_true", help="print this machine's daily totals as JSON and exit")
     a = ap.parse_args()
     if a.export:
@@ -217,6 +247,10 @@ def main():
         merge(data["sources"].setdefault(a.imp, {}), aggregate(sys.stdin))
     elif a.import_totals:
         merge(data["sources"].setdefault(a.import_totals[0], {}), json.load(open(a.import_totals[1])))
+    elif a.import_stats:
+        merge(data["sources"].setdefault(a.import_stats[0], {}), from_stats(a.import_stats[1]))
+    elif a.import_ledger:
+        merge(data["sources"].setdefault(a.import_ledger[0], {}), from_ledger(a.import_ledger[1]))
     merge(data["sources"].setdefault(a.source, {}), aggregate(local_lines()))
     for k, n in claude_commits().items():
         data["commits"][k] = max(n, data["commits"].get(k, 0))
