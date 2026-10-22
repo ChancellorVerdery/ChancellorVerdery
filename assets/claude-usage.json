@@ -1,180 +1,465 @@
 {
- "updated": "2026-10-21",
- "summary": "7.3B tokens \u00b7 30,857 messages \u00b7 29 active days \u00b7 current streak 11 d \u00b7 longest 11 d",
- "days": {
-  "2026-09-16": {
-   "tokens": 436064721,
-   "output": 976415,
-   "messages": 4022,
-   "sessions": 1
+ "commits": {
+  "2026-08-10": 5,
+  "2026-08-11": 8,
+  "2026-08-12": 16,
+  "2026-08-13": 14,
+  "2026-08-14": 2,
+  "2026-08-16": 1,
+  "2026-08-17": 1,
+  "2026-08-18": 9,
+  "2026-08-19": 7,
+  "2026-08-21": 18,
+  "2026-08-25": 4,
+  "2026-08-31": 2,
+  "2026-09-01": 21,
+  "2026-09-02": 2,
+  "2026-09-07": 40,
+  "2026-09-08": 16,
+  "2026-09-10": 4,
+  "2026-09-16": 18,
+  "2026-09-17": 22,
+  "2026-09-18": 10,
+  "2026-09-21": 6,
+  "2026-09-23": 18,
+  "2026-09-24": 29,
+  "2026-09-25": 19,
+  "2026-09-26": 5,
+  "2026-09-27": 12,
+  "2026-09-28": 15,
+  "2026-09-30": 26,
+  "2026-10-01": 2,
+  "2026-10-02": 7,
+  "2026-10-04": 6,
+  "2026-10-05": 24,
+  "2026-10-06": 13,
+  "2026-10-07": 2,
+  "2026-10-11": 17,
+  "2026-10-12": 35,
+  "2026-10-13": 13,
+  "2026-10-14": 3,
+  "2026-10-15": 25,
+  "2026-10-16": 7,
+  "2026-10-17": 3,
+  "2026-10-18": 3,
+  "2026-10-19": 16,
+  "2026-10-20": 13,
+  "2026-10-21": 20
+ },
+ "sources": {
+  "beelink": {
+   "2026-09-11": {
+    "messages": 28,
+    "output": 2784,
+    "sessions": 1,
+    "tokens": 2296601
+   },
+   "2026-09-12": {
+    "messages": 48,
+    "output": 432,
+    "sessions": 1,
+    "tokens": 4347408
+   },
+   "2026-09-13": {
+    "messages": 48,
+    "output": 432,
+    "sessions": 1,
+    "tokens": 4848529
+   },
+   "2026-09-14": {
+    "messages": 48,
+    "output": 432,
+    "sessions": 1,
+    "tokens": 5357074
+   },
+   "2026-09-15": {
+    "messages": 48,
+    "output": 432,
+    "sessions": 1,
+    "tokens": 5862556
+   },
+   "2026-09-16": {
+    "messages": 48,
+    "output": 432,
+    "sessions": 1,
+    "tokens": 6371196
+   },
+   "2026-09-17": {
+    "messages": 48,
+    "output": 432,
+    "sessions": 1,
+    "tokens": 6873582
+   },
+   "2026-09-18": {
+    "messages": 71,
+    "output": 216,
+    "sessions": 1,
+    "tokens": 3630468
+   },
+   "2026-09-19": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-09-20": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-09-21": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-09-22": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-09-23": {
+    "messages": 108,
+    "output": 0,
+    "sessions": 13,
+    "tokens": 0
+   },
+   "2026-09-24": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-09-25": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-09-26": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-09-27": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-09-28": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-09-29": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-09-30": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-01": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-02": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-03": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-04": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-05": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-06": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-07": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-08": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-09": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-10": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-11": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-12": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-13": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-14": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-15": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-16": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-17": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-18": {
+    "messages": 96,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   },
+   "2026-10-19": {
+    "messages": 68,
+    "output": 0,
+    "sessions": 1,
+    "tokens": 0
+   }
   },
-  "2026-09-17": {
-   "tokens": 239433084,
-   "output": 496220,
-   "messages": 1499,
-   "sessions": 2
-  },
-  "2026-09-18": {
-   "tokens": 112596054,
-   "output": 251337,
-   "messages": 346,
-   "sessions": 3
-  },
-  "2026-09-21": {
-   "tokens": 66842542,
-   "output": 341042,
-   "messages": 217,
-   "sessions": 3
-  },
-  "2026-09-23": {
-   "tokens": 438303160,
-   "output": 665495,
-   "messages": 750,
-   "sessions": 2
-  },
-  "2026-09-24": {
-   "tokens": 314272610,
-   "output": 363813,
-   "messages": 1926,
-   "sessions": 4
-  },
-  "2026-09-25": {
-   "tokens": 228370262,
-   "output": 106745,
-   "messages": 1230,
-   "sessions": 1
-  },
-  "2026-09-26": {
-   "tokens": 833692697,
-   "output": 242041,
-   "messages": 3436,
-   "sessions": 2
-  },
-  "2026-09-27": {
-   "tokens": 944796989,
-   "output": 277872,
-   "messages": 3577,
-   "sessions": 3
-  },
-  "2026-09-28": {
-   "tokens": 98906465,
-   "output": 99600,
-   "messages": 767,
-   "sessions": 3
-  },
-  "2026-09-30": {
-   "tokens": 254119154,
-   "output": 436814,
-   "messages": 829,
-   "sessions": 5
-  },
-  "2026-10-01": {
-   "tokens": 34496277,
-   "output": 120126,
-   "messages": 140,
-   "sessions": 3
-  },
-  "2026-10-02": {
-   "tokens": 42671342,
-   "output": 170306,
-   "messages": 240,
-   "sessions": 2
-  },
-  "2026-10-03": {
-   "tokens": 99733778,
-   "output": 178588,
-   "messages": 397,
-   "sessions": 1
-  },
-  "2026-10-04": {
-   "tokens": 33322847,
-   "output": 186905,
-   "messages": 173,
-   "sessions": 3
-  },
-  "2026-10-05": {
-   "tokens": 436721143,
-   "output": 792329,
-   "messages": 1803,
-   "sessions": 6
-  },
-  "2026-10-06": {
-   "tokens": 263447707,
-   "output": 338224,
-   "messages": 1029,
-   "sessions": 2
-  },
-  "2026-10-07": {
-   "tokens": 43117040,
-   "output": 36192,
-   "messages": 71,
-   "sessions": 3
-  },
-  "2026-10-11": {
-   "tokens": 183966798,
-   "output": 315124,
-   "messages": 536,
-   "sessions": 1
-  },
-  "2026-10-12": {
-   "tokens": 472758337,
-   "output": 434245,
-   "messages": 1161,
-   "sessions": 2
-  },
-  "2026-10-13": {
-   "tokens": 217977797,
-   "output": 338189,
-   "messages": 476,
-   "sessions": 2
-  },
-  "2026-10-14": {
-   "tokens": 14343109,
-   "output": 49468,
-   "messages": 51,
-   "sessions": 1
-  },
-  "2026-10-15": {
-   "tokens": 338334813,
-   "output": 344129,
-   "messages": 1100,
-   "sessions": 1
-  },
-  "2026-10-16": {
-   "tokens": 40074728,
-   "output": 97044,
-   "messages": 159,
-   "sessions": 1
-  },
-  "2026-10-17": {
-   "tokens": 7751067,
-   "output": 49347,
-   "messages": 72,
-   "sessions": 1
-  },
-  "2026-10-18": {
-   "tokens": 52325402,
-   "output": 127214,
-   "messages": 139,
-   "sessions": 2
-  },
-  "2026-10-19": {
-   "tokens": 126564252,
-   "output": 444584,
-   "messages": 436,
-   "sessions": 4
-  },
-  "2026-10-20": {
-   "tokens": 425709562,
-   "output": 505960,
-   "messages": 1355,
-   "sessions": 3
-  },
-  "2026-10-21": {
-   "tokens": 529464401,
-   "output": 738194,
-   "messages": 2920,
-   "sessions": 6
+  "this-mac": {
+   "2026-09-16": {
+    "messages": 4022,
+    "output": 976415,
+    "sessions": 1,
+    "tokens": 436064721
+   },
+   "2026-09-17": {
+    "messages": 1499,
+    "output": 496220,
+    "sessions": 2,
+    "tokens": 239433084
+   },
+   "2026-09-18": {
+    "messages": 346,
+    "output": 251337,
+    "sessions": 3,
+    "tokens": 112596054
+   },
+   "2026-09-21": {
+    "messages": 217,
+    "output": 341042,
+    "sessions": 3,
+    "tokens": 66842542
+   },
+   "2026-09-23": {
+    "messages": 750,
+    "output": 665495,
+    "sessions": 2,
+    "tokens": 438303160
+   },
+   "2026-09-24": {
+    "messages": 1926,
+    "output": 363813,
+    "sessions": 4,
+    "tokens": 314272610
+   },
+   "2026-09-25": {
+    "messages": 1230,
+    "output": 106745,
+    "sessions": 1,
+    "tokens": 228370262
+   },
+   "2026-09-26": {
+    "messages": 3436,
+    "output": 242041,
+    "sessions": 2,
+    "tokens": 833692697
+   },
+   "2026-09-27": {
+    "messages": 3577,
+    "output": 277872,
+    "sessions": 3,
+    "tokens": 944796989
+   },
+   "2026-09-28": {
+    "messages": 767,
+    "output": 99600,
+    "sessions": 3,
+    "tokens": 98906465
+   },
+   "2026-09-30": {
+    "messages": 829,
+    "output": 436814,
+    "sessions": 5,
+    "tokens": 254119154
+   },
+   "2026-10-01": {
+    "messages": 140,
+    "output": 120126,
+    "sessions": 3,
+    "tokens": 34496277
+   },
+   "2026-10-02": {
+    "messages": 240,
+    "output": 170306,
+    "sessions": 2,
+    "tokens": 42671342
+   },
+   "2026-10-03": {
+    "messages": 397,
+    "output": 178588,
+    "sessions": 1,
+    "tokens": 99733778
+   },
+   "2026-10-04": {
+    "messages": 173,
+    "output": 186905,
+    "sessions": 3,
+    "tokens": 33322847
+   },
+   "2026-10-05": {
+    "messages": 1803,
+    "output": 792329,
+    "sessions": 6,
+    "tokens": 436721143
+   },
+   "2026-10-06": {
+    "messages": 1029,
+    "output": 338224,
+    "sessions": 2,
+    "tokens": 263447707
+   },
+   "2026-10-07": {
+    "messages": 71,
+    "output": 36192,
+    "sessions": 3,
+    "tokens": 43117040
+   },
+   "2026-10-11": {
+    "messages": 536,
+    "output": 315124,
+    "sessions": 1,
+    "tokens": 183966798
+   },
+   "2026-10-12": {
+    "messages": 1161,
+    "output": 434245,
+    "sessions": 2,
+    "tokens": 472758337
+   },
+   "2026-10-13": {
+    "messages": 476,
+    "output": 338189,
+    "sessions": 2,
+    "tokens": 217977797
+   },
+   "2026-10-14": {
+    "messages": 51,
+    "output": 49468,
+    "sessions": 1,
+    "tokens": 14343109
+   },
+   "2026-10-15": {
+    "messages": 1100,
+    "output": 344129,
+    "sessions": 1,
+    "tokens": 338334813
+   },
+   "2026-10-16": {
+    "messages": 159,
+    "output": 97044,
+    "sessions": 1,
+    "tokens": 40074728
+   },
+   "2026-10-17": {
+    "messages": 72,
+    "output": 49347,
+    "sessions": 1,
+    "tokens": 7751067
+   },
+   "2026-10-18": {
+    "messages": 139,
+    "output": 127214,
+    "sessions": 2,
+    "tokens": 52325402
+   },
+   "2026-10-19": {
+    "messages": 436,
+    "output": 444584,
+    "sessions": 4,
+    "tokens": 126564252
+   },
+   "2026-10-20": {
+    "messages": 1355,
+    "output": 505960,
+    "sessions": 3,
+    "tokens": 425709562
+   },
+   "2026-10-21": {
+    "messages": 3117,
+    "output": 884922,
+    "sessions": 6,
+    "tokens": 564647867
+   }
   }
- }
+ },
+ "summary": "58 active days since Aug 10, 2026 \u00b7 7.4B tokens \u00b7 34,401 messages logged \u00b7 streak 42 d (longest 42)",
+ "updated": "2026-10-21"
 }
